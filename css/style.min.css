@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Make images easier to work with */
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  color: hsl(249deg, 10%, 26%);
+  background: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 0;
+  row-gap: 0;
+}
+@media (min-width: 1270px) {
+  body {
+    align-items: center;
+    text-align: start;
+  }
+}
+body .bg-clr {
+  background-color: hsl(0deg, 100%, 74%);
+  height: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body .bg-img {
+  height: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+}
+body .bg.img .img{
+  width:100%;
+  height: 100%;
+}
+@media (min-width: 1270px) {
+  body .bg-img {
+    background-position: 1rem 3rem;
+    background-repeat: no-repeat;
+  }
+}
+body main {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding-inline: 1.5rem;
+  padding-block-end: 3rem;
+}
+@media (min-width: 1270px) {
+  body main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+  }
+}
+body main .main-header {
+  color: white;
+  padding-block: 5.4rem 4.6rem;
+  opacity: 1;
+}
+body main .main-header h1 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+@media (min-width: 1270px) {
+  body main .main-header h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    padding-block-start: 2rem;
+  }
+}
+body main .main-header p {
+  padding-block-start: 2.2rem;
+}
+@media (min-width: 1270px) {
+  body main .main-header p {
+    line-height: 1.8rem;
+  }
+}
+body main form header {
+  background: hsl(248deg, 32%, 49%);
+  opacity: 1;
+  border-radius: 0.8rem;
+  padding-block: 1.2rem;
+  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 1270px) {
+  body main form header {
+    text-align: center;
+  }
+}
+body main form header h2 {
+  font-size: 1rem;
+  color: #dfdcff;
+  padding-inline: 2.6rem;
+  font-weight: 400;
+}
+body main form header h2 strong {
+  color: white;
+}
+body main form .form {
+  margin-block: 1.5rem;
+  background: white;
+  border-radius: 0.8rem;
+  padding-block: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.1);
+}
+body main form .form .input {
+  width: 86%;
+  position: relative;
+}
+body main form .form .input input {
+  width: 100%;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-block: 0.8rem;
+  padding-inline-start: 1rem;
+}
+body main form .form .input ::placeholder {
+  font-weight: 700;
+  font-size: 13px;
+}
+body main form .form .input .error-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-100%, 50%);
+  display: none;
+}
+body main form .form button {
+  width: 86%;
+  padding-block: 1rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: #22845a;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(24, 145, 92, 0.8);
+}
+body main form .form button:active {
+  background-color: hsla(154deg, 59%, 51%, 0.7);
+}
+body main form .form .warning {
+  margin-left: auto;
+  margin-block: -1rem -0.5rem;
+  color: hsl(0deg, 100%, 74%);
+  font-weight: 500;
+  display: none;
+}
+body main form .form p {
+  font-size: 0.7rem;
+  color: #716f82;
+  padding-inline: 2.2rem;
+}
+body main form .form p a {
+  color: #b95757;
+  font-weight: 600;
+}/*# sourceMappingURL=style.min.css.map */

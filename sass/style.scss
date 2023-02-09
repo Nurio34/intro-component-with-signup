@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@import 'reset';
+@import 'mixin';
+@import 'conf';
+
+body{
+    @include general ($clr-400,white,$ff-1,$fs-1,$fw-4,$cntr);
+    @include grid ($grd,$cntr,$strt,1fr,1fr,0,0);
+
+    @media (min-width:1270px) {
+        align-items: center;
+        text-align: start;
+    }
+
+    .bg-clr{
+        background-color: $clr-100;
+        height:100%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .bg-img{
+        height: 100%;
+        background: url("/images/bg-intro-mobile.png");
+        grid-column: 1/2;
+        grid-row: 1/2;
+
+        @media (min-width:1270px) {
+            background: url("/images/bg-intro-desktop.png");
+            background-position: 1rem 3rem;
+            background-repeat: no-repeat;
+        }
+    }
+
+    main{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        padding-inline: 1.5rem;
+        padding-block-end: 3rem;
+
+        @media (min-width:1270px) {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+        }
+        .main-header{
+            color:white;
+            padding-block: 5.4rem 4.6rem;
+            opacity: 1;
+
+            h1{
+                font-size: 1.7rem;
+                line-height: 2rem;
+
+                @media (min-width:1270px) {
+                    font-size: 3.5rem;
+                    line-height: 4rem;
+                    padding-block-start: 2rem;
+                }
+            }
+            p{
+                padding-block-start: 2.2rem;
+
+                @media (min-width:1270px) {
+                    line-height: 1.8rem;
+                }
+            }
+        }
+
+        form{
+            header{
+                background: $clr-300;
+                opacity: 1;
+                border-radius: 0.8rem;
+                padding-block: 1.2rem;
+                box-shadow: 0 9px 0 rgba($color: #000000, $alpha: 0.1);
+
+                @media (min-width:1270px) {
+                    text-align: center;
+                }
+                
+                h2{
+                    font-size: $fs-1;
+                    color: #dfdcff;
+                    padding-inline: 2.6rem;
+                    font-weight: $fw-4;
+                    strong{
+                        color:white;
+                    }
+                }
+            }
+
+            .form{
+                margin-block: 1.5rem;
+                background: white;
+                border-radius: 0.8rem;
+                padding-block: 1.2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap:1.4rem;
+                box-shadow: 0 9px 0 rgba($color: #000000, $alpha: 0.1);
+
+
+                .input{
+                    width: 86%;
+                    position:relative;
+
+                    input{
+                        width:100%;
+                        border-radius: 0.4rem;
+                        border:1px solid rgba($color: #000000, $alpha: 0.1);
+                        padding-block: 0.8rem;
+                        padding-inline-start: 1rem;
+                    }
+
+                    ::placeholder{
+                        font-weight: 700;
+                        font-size: 13px;
+                    }
+
+                    .error-img{
+                        position: absolute;
+                        top:0;
+                        right:0;
+                        transform: translate(-100%,50%);
+                        display:none
+                    }
+                }
+
+                button{
+                    width:86%;
+                    padding-block: 1rem;
+                    text-transform: uppercase;
+                    color: white;
+                    background-color: $clr-200;
+                    border:none;
+                    border-radius: 0.4rem;
+                    cursor: pointer;
+                    box-shadow: 0 5px 0 rgba($color: $clr-600, $alpha: 0.8);
+                }
+
+                button:active{
+                    background-color: hsla(154, 59%, 51%,0.7);
+                }
+            
+                .warning{
+                    margin-left: auto;
+                    margin-block: -1rem -0.5rem;
+                    color:$clr-100;
+                    font-weight: 500;
+                    display: none;
+                }
+                p{
+                    font-size: 0.7rem;
+                    color: $clr-500;
+                    padding-inline: 2.2rem;
+
+                    a{
+                        color: #b95757 ;
+                        font-weight: $fw-6;
+                    }
+                }
+            }
+        }
+    }
+}
+
